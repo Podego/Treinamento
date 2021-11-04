@@ -1,0 +1,28 @@
+import random
+class DecideAi:
+    def __init__(self):
+        self.respostas = ['Não faço ideia.', 'Se vira aí seu trouxa.', 'Eu quero mais é que você se foda.', 'Sim.', 'Não.', 'Talvez.', 'Claro.', 'Com certeza.', 'Nem fudendo.', 'Em hipótese alguma.', 'Nem morto.', 'Irmão, isso aí depende do quanto você quer se fuder.', 'Eu não entendo essa vontade que você tem de fazer merda, na humilda.', 'Meus parabéns, essa é a primeira vez que tu fala algo que preste.', 'Boa ideia.', 'Good luck!', 'Gambatte.', 'Faz isso não, vai por mim.']
+    def add(self, frase):
+        return self.respostas.append(frase)
+    def add2(self):
+        frase = input('Insira a frase a ser adicionada.\n>')
+        return self.respostas.append(frase)
+    def __str__(self):
+        return f'Temos {len(self.respostas)} itens na lista.'
+    
+    def pergunta(self):
+        pergunta = input('Manda pro pai\n> ')
+        self.resposta()
+        
+    def resposta(self):
+        resposta = random.choice(self.respostas)
+        print(resposta)
+        maisUma = input('Posso ajudar em mais alguma coisa, ser inferior?\n> ')
+        sim = ['sim', 'SIM', 'Sim', 's', 'S', 'pode', 'Pode', 'PODE', 'claro', 'Claro', 'CLARO']
+        if maisUma in sim:
+            print('Lansa\n>')
+            self.pergunta
+        else:
+            print('Entendido Capitão Broxa, até a próxima!')
+thay = DecideAi()
+thay.pergunta()
