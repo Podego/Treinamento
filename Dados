@@ -1,0 +1,33 @@
+import random
+class JogarDados:
+    def __init__(self):
+        self.init = 1
+        self.fim = 6
+        self.random = random.randint(self.init,self.fim)
+
+    def pergunta(self):
+        pergunta = input('Você gostaria de jogar o dado (s/n)? ')
+        pergunta = pergunta.lower()
+        if pergunta == 's':
+            print(f'Entendido capitão broxa!\nO valor sorteado foi {self.random}.\n')
+            self.jogarNovamente()
+        if pergunta == 'n':
+            return print('Veio fazer o quê aqui então?')
+        if pergunta != 's' and pergunta != 'n':
+            print('Por favor, responda apenas com "s" ou "n".')
+            self.pergunta()
+    def jogarNovamente(self):
+        pergunta = input('Você gostaria de jogar o dado novamente (s/n)?')
+        pergunta = pergunta.lower()
+        if pergunta == 's':
+            self.random = random.randint(self.init,self.fim)
+            print(f'Entendido capitão broxa!\nO novo valor sorteado foi {self.random}.\n')
+            self.jogarNovamente()
+        if pergunta == 'n':
+            return print('Veio fazer o quê aqui então?')
+        if pergunta != 's' and pergunta != 'n':
+            print('Por favor, responda apenas com "s" ou "n".')
+            self.jogarNovamente()
+
+podego = JogarDados()
+podego.pergunta()
